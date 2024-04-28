@@ -1,4 +1,5 @@
-package com.backend.assignment.services.ServiceImpl;
+package com.backend.assignment.services.serviceImpl;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +17,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+
 
     @Override
     public User signUp(User user) {
@@ -57,4 +60,6 @@ public class UserServiceImpl implements UserService {
     public void deleteProfile(Long userId) {
         userRepository.deleteById(userId);
     }
+
+   
 }
