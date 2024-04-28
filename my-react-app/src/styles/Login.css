@@ -5,11 +5,12 @@
     font-family: 'Arial', sans-serif;
   }
   
-  .login-header h1 {
+  /* .login-header h1 {
     text-align: center;
-  }
+  } */
   
   .login-form {
+    color:darkgrey;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -24,9 +25,9 @@
   .login-form button {
     padding: 10px;
     border: none;
-    background-color: black;
-    color: white;
+    color: black;
     cursor: pointer;
+    border: 1px solid rgb(66, 66, 66);
   }
   
   .login-form button:hover {
@@ -34,7 +35,8 @@
   }
   
   .sign-up-link {
-    text-align: center;
+    /* text-align: center; */
+    /* color:darkgrey; */
     margin-top: 10px;
   }
   

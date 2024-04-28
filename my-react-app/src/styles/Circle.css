@@ -1,0 +1,13 @@
+/* .circle-container {
+    display: flex;
+    flex-direction: column;
+} */
+
+.circle {
+    width: 5px;
+    height: 5px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid rgb(44, 44, 44); 
+  }
+  

@@ -1,0 +1,10 @@
+.line {
+    height: 1px;
+    padding:2px;
+    width: 200px;
+    /* background-color: black; Set the color of the line */
+    border:none;
+    
+  }
+
+ 

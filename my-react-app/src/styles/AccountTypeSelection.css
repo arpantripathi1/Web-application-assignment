@@ -1,0 +1,124 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+main {
+    max-width:70%;
+    margin-left:10%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+} 
+
+.welcome-text-col{
+    max-width: 30%;
+    margin-right: 50px;
+}
+
+ul label {
+    color:darkgrey;
+}
+
+span p{
+    padding: 7px 20px;
+    max-width:60%;
+} 
+
+.account-type-container h2 {
+    text-align: center;
+  }
+  
+  .account-type-col {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .account-type-col span p {
+    color:darkgrey;
+  }
+  
+  .account-option button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .account-option {
+    background: #f7f7f7;
+    margin:10px;
+    padding:10px;
+  }
+
+  .account-option:hover{
+    border:2px solid #585858
+  }
+  
+
+  .account-option button:hover {
+    background: #f7f7f7;
+    border: 0ch;
+  }
+
+  .continue-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+/* css for checkboxes */
+.checkbox-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checkbox-list li {
+  margin-bottom: 10px;
+}
+
+.checkbox-list input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkbox-list input[type="checkbox"] + label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px; /* Adjust spacing between checkbox and text */
+}
+
+.checkbox-list input[type="checkbox"] + label:before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* Adjust width of the checkbox */
+  height: 20px; /* Adjust height of the checkbox */
+  border-radius: 5px; /* Add rounded corners */
+  border: 2px solid #999; /* Add border */
+  position: absolute;
+  left: 0;
+  top: 2px; /* Adjust alignment */
+}
+
+.checkbox-list input[type="checkbox"]:checked + label:before {
+  background-color: #007bff; /* Change background color when checkbox is checked */
+}
+
+.checkbox-list input[type="checkbox"]:checked + label:after {
+  content: '\2713'; /* Add checkmark symbol */
+  font-size: 16px; /* Adjust size of the checkmark */
+  color: white; /* Change color of the checkmark */
+  position: absolute;
+  left: 5px; /* Adjust alignment */
+  top: 2px; /* Adjust alignment */
+}

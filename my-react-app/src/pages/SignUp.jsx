@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import './SignUp.css';
+import '../styles/SignUp.css';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import Button from '../components/Button';
+
 
 const SignUp = ({ accountType }) => {
   // Set initial form fields based on account type
@@ -29,20 +32,30 @@ const SignUp = ({ accountType }) => {
     setAgreementChecked(event.target.checked);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Validation and submission logic here
-    console.log(formData);
-    console.log(agreementChecked);
+    // console.log(formData);
+    // console.log(agreementChecked);
+     try {
+      const response = await axios.post('/user/signup', formData);
+      
+      if (response.status === 200) {
+        console.log('Signup successful!');
+      } else {
+        console.error('Signup failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
   };
 
   return (
     <div className="signup-container">
-      <h2>{accountType === 'business' ? 'Business Account SignUp' : "Let's get started"}</h2>
+      <h2>{accountType === 'business' ? "Let's get started" : "Let's get started"}</h2>
       <div>
-        <div className='column-one'>
-          <h2>Let's create account</h2>
-        </div>
+      
         <div className='column-two'>
             <form onSubmit={handleSubmit} className="signup-form">
                 <h4>create your {accountType} account</h4>
@@ -56,7 +69,6 @@ const SignUp = ({ accountType }) => {
                     <input
                         name="companyName"
                         type="text"
-                        placeholder="Company Name"
                         value={formData.companyName}
                         onChange={handleInputChange}
                     />
@@ -94,29 +106,31 @@ const SignUp = ({ accountType }) => {
                 ) : (
                 <>
                 <div className='name'>
-                <input
-                    name="firstName"
-                    type="text"
-                    placeholder="First Name"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    />
+                  <div className=''>
+                    <label id="fn">First name:</label>
+                    <input
+                        name="firstName"
+                        type="text"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
+                      />
+                  </div>
                 
-                
-                <input
-                    name="lastName"
-                    type="text"
-                    placeholder="Last Name"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
+                <div className=''>
+                  <label id="ln">Last name:</label>
+                  <input
+                      name="lastName"
+                      type="text"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                     />
                 </div>
                 
-                
+                </div>
+                    <label id="mail">Email:</label>
                     <input
                     name="email"
                     type="email"
-                    placeholder="Email"
                     value={formData.email}
                     onChange={handleInputChange}
                     />
@@ -130,7 +144,7 @@ const SignUp = ({ accountType }) => {
                 />
                 I certify that I'm 18 years or older, I agree to the Terms & Conditions and Privacy Policy.
                 </label>
-                <button type="submit" className="signup-button">Continue</button>
+                <Button name="continue" path=""/>
             </form>
             {accountType !== 'business' && (
                 <p className="alternate-signup">

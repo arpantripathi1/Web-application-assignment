@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.two-circles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.navbar-mid-section{
+    display: flex;
+    flex-direction:  column;
+    width:17%;
+    align-content: center;
+
+}
+
+.navbar-mid-section .second-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  

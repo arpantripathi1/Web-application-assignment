@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './EmailVerificationStep.css';
+import '../styles/EmailVerificationStep.css';
+import Button from '../components/Button';
 
 const EmailVerificationStep = () => {
   const [otp, setOtp] = useState(new Array(6).fill(""));
@@ -36,7 +37,7 @@ const EmailVerificationStep = () => {
             );
           })}
         </div>
-        <button className="verify-button">Verify</button>
+        <Button name="verify" path=""/>
         <p className="otp-resend">Re-send OTP code in 00:54</p>
       </section>
     </div>
